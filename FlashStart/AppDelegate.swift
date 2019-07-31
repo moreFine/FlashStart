@@ -37,21 +37,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func statusBarClicked(_ sender:NSStatusItem){
-        if (!judgeWindowVisible()){
-           self.reopenWindow()
-        }
+        self.reopenWindow()
     }
    
     final func reopenWindow() {
+        NSApplication.shared.windows.last?.makeKeyAndOrderFront(nil)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+/*
+    可用于新建窗口
         let sb = NSStoryboard(name: "Main", bundle: nil)
         let controller = sb.instantiateInitialController() as!
         NSWindowController
         controller.window?.makeKeyAndOrderFront(self)
         NSApplication.shared.activate(ignoringOtherApps: true)
-    }
-   
-    final func judgeWindowVisible() -> Bool{
-        return NSApplication.shared.keyWindow != nil
+ */
     }
 }
 

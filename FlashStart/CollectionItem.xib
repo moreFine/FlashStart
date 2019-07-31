@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SBCollectionItem" customModule="FlashStart" customModuleProvider="target">
             <connections>
                 <outlet property="fileName" destination="BZ3-JM-CQH" id="jbQ-7a-bvg"/>
+                <outlet property="fileTyple" destination="eK2-VB-2Po" id="HWO-pe-Pte"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -27,12 +28,20 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="flash" id="cPB-4b-Ezs"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BZ3-JM-CQH">
-                    <rect key="frame" x="-2" y="0.0" width="327" height="30"/>
+                    <rect key="frame" x="-2" y="-10" width="327" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="N4e-yd-7YQ"/>
+                        <constraint firstAttribute="height" constant="40" id="N4e-yd-7YQ"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="charWrapping" alignment="center" title="链表链表链表链表链表链表链表链表链表链表链表链表" id="c4t-86-0aI">
+                    <textFieldCell key="cell" truncatesLastVisibleLine="YES" alignment="center" title="链表链表链表链表链表链表链表链表链表链表链表链表" id="c4t-86-0aI">
                         <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eK2-VB-2Po">
+                    <rect key="frame" x="105" y="38" width="114" height="22"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title=".doc" id="5QU-0S-pc1">
+                        <font key="font" metaFont="system" size="18"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -42,12 +51,20 @@
                 <constraint firstItem="Zll-2I-74P" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="0Fi-ei-fqE"/>
                 <constraint firstAttribute="trailing" secondItem="BZ3-JM-CQH" secondAttribute="trailing" id="8eV-fk-XcK"/>
                 <constraint firstItem="BZ3-JM-CQH" firstAttribute="top" secondItem="Zll-2I-74P" secondAttribute="bottom" constant="8" id="LHw-LX-Awa"/>
+                <constraint firstItem="eK2-VB-2Po" firstAttribute="bottom" secondItem="Zll-2I-74P" secondAttribute="bottom" id="MDH-Au-eAD"/>
+                <constraint firstItem="eK2-VB-2Po" firstAttribute="leading" secondItem="Zll-2I-74P" secondAttribute="leading" id="RAh-C9-nHd"/>
                 <constraint firstItem="BZ3-JM-CQH" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="dlu-U0-2Ad"/>
                 <constraint firstItem="Zll-2I-74P" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="ec3-ff-hVd"/>
+                <constraint firstItem="eK2-VB-2Po" firstAttribute="top" secondItem="Zll-2I-74P" secondAttribute="top" constant="38" id="pE8-lx-H9z"/>
+                <constraint firstItem="eK2-VB-2Po" firstAttribute="trailing" secondItem="Zll-2I-74P" secondAttribute="trailing" id="uGz-dV-N7v"/>
             </constraints>
             <point key="canvasLocation" x="-34.5" y="225.5"/>
         </customView>
-        <customObject id="9xx-AP-jaN" customClass="CollectionItem" customModule="FlashStart" customModuleProvider="target"/>
+        <customObject id="9xx-AP-jaN" customClass="CollectionItem" customModule="FlashStart" customModuleProvider="target">
+            <connections>
+                <outlet property="iconImageView" destination="Zll-2I-74P" id="HLS-tC-JPD"/>
+            </connections>
+        </customObject>
     </objects>
     <resources>
         <image name="flash" width="60" height="40"/>

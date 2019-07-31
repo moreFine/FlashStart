@@ -16,6 +16,8 @@ class CollectionItem:  NSCollectionViewItem {
     var mouseDoubleClicked:(() -> ())?
     var fileMenu:NSMenu? = nil
     @IBOutlet weak var fileName: NSTextField!
+    @IBOutlet weak var fileTyple: NSTextField!
+    @IBOutlet weak var iconImageView: NSImageView!
     
     override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
